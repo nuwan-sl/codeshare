@@ -1,0 +1,38 @@
+<mat-sidenav-container class="main-container">
+  <mat-sidenav #sidenav mode="side" class="sider">
+    <div class="menu-item">
+      <button mat-button>
+        <mat-icon>mail_outline</mat-icon>
+        Contact us
+      </button>
+    </div>
+    <div class="menu-item">
+      <button mat-button>
+        <mat-icon>perm_identity</mat-icon>
+        About us
+      </button>
+    </div>
+  </mat-sidenav>
+  <div class="fixed">
+    <mat-toolbar color="primary">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>reorder</mat-icon>
+      </button>
+      <span>Online Assignment</span>
+      <span class="example-spacer"></span>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon>person</mat-icon>
+      </button>
+    </mat-toolbar>
+
+    <router-outlet></router-outlet>
+
+
+    <button routerLink="/assignment-search">assignment-search</button>
+    <button routerLink="/assignment-edit">assignment-edit</button>
+    <button routerLink="/launch-pad">launch-pad</button>
+    <button routerLink="">Home</button>
+
+
+  </div>
+</mat-sidenav-container>

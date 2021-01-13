@@ -1,0 +1,43 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+/*@import './theme.scss';*/
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/***
+Inner body container
+ */
+.inner-body {
+  @media (min-width: 576px) {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 30px;
+  }
+
+  // Medium devices (tablets, 768px and up)
+  @media (min-width: 768px) {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 30px;
+  }
+
+  // Large devices (desktops, 992px and up)
+  @media (min-width: 992px) {
+    max-width: 990px !important;
+    margin: 0 auto;
+    padding: 0 30px;
+  }
+
+  // Extra large devices (large desktops, 1200px and up)
+  @media (min-width: 1200px) {
+    max-width: 1024px !important;
+    margin: 0 auto;
+    padding: 0 30px;
+  }
+}
+
+
