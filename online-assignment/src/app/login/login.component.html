@@ -1,41 +1,19 @@
-<!-- <div class="container">
-    <div>
-        User Name : <input type="text" name="username" [(ngModel)]="username"> Password : <input type="password" name="password" [(ngModel)]="password">
-    </div>
-    <button (click)=checkLogin() class="btn btn-success">
-    Login
-  </button>
-</div> -->
-
-<mat-card>
-    <mat-card-header>
-        <mat-card-title>Login</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-        <form>
-            <table class="example-full-width" cellspacing="0">
-                <tr>
-                    <td>
-                        <mat-form-field class="example-full-width">
-                            <input matInput placeholder="Username" [(ngModel)]="username" name="username" required>
-                        </mat-form-field>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <mat-form-field class="example-full-width">
-                            <input matInput placeholder="Password" [(ngModel)]="password" type="password" name="password" required>
-                        </mat-form-field>
-                    </td>
-                </tr>
-                <p *ngIf="error" class="error">
-                    {{ error }}
-                </p>
-            </table>
-        </form>
-        <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
-    </mat-card-content>
-    <mat-card-actions>
-        <button mat-raised-button (click)="checkLogin()" color="primary">Login</button>
-    </mat-card-actions>
-</mat-card>
+<!--
+<div class="main login">
+  <img src=".././../assets/login.jpg" alt="">
+  <h3>Login to Continue</h3>
+  <div class="question-field">
+    <mat-form-field appearance="fill">
+      <mat-label>Username</mat-label>
+      <input matInput placeholder="Enter username">
+      &lt;!&ndash; <mat-hint>Enter username</mat-hint> &ndash;&gt;
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Password</mat-label>
+      <input type="password" matInput placeholder="Enter password">
+      &lt;!&ndash; <mat-hint>Enter username</mat-hint> &ndash;&gt;
+    </mat-form-field>
+    <button mat-flat-button color="primary">Log In</button>
+  </div>
+</div>
+-->

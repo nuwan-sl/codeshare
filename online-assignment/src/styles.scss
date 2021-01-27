@@ -1,5 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
-/* You can add global styles to this file, and also import other style files */
 
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 /*@import './theme.scss';*/
@@ -40,4 +39,173 @@ Inner body container
   }
 }
 
+.main {
+  max-width: 720px;
+  margin: auto;
+  margin-top: 24px;
+}
 
+body {
+  background-color: #F8F7F5;
+}
+
+
+
+.assignment-edit {
+  position: relative;
+}
+
+.qn-no {
+  display: flex;
+  width: 20px;
+  height: 20px;
+  justify-content: center;
+  align-items: center;
+  background: purple;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 500;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.move-handle {
+  display: grid;
+  grid-template-columns: 6px 6px 6px;
+  grid-template-rows: 6px 6px;
+  cursor: move;
+  align-content: center;
+}
+
+.dot {
+  width: 4px;
+  height: 4px;
+  display: inline-block;
+  background: #cfcfcf;
+  border-radius: 2px;
+}
+
+.question-field, .help-text-field {
+  .mat-form-field {
+    display: block;
+  }
+}
+
+.responses {
+  .mat-radio-button {
+    display: block;
+    margin: 12px 0;
+  }
+  .mat-radio-label-content {
+    padding-left: 12px;
+  }
+}
+
+.help-text {
+  font-size: 14px;
+  color: rgba(black, 0.54);
+}
+
+.floating-actions {
+  display: inline-flex;
+  flex-direction: column;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  padding: 8px;
+  background-color: #fff;
+  position: fixed;
+  top: 72;
+  right: 72px;
+  z-index: 10;
+}
+
+.sep {
+  display: block;
+  height: 1px;
+  background-color: #eee;
+  margin: 3px 0;
+}
+
+.question-block {
+  .mat-expansion-panel {
+    box-shadow: none;
+    border: 1px solid #e5e5e5;
+  }
+
+}
+
+.mat-tab-body-wrapper {
+  padding-top: 24px;
+}
+
+.row {
+  padding: 0 15px;
+  display: grid;
+  grid-column-gap: 30px;
+  &.half-width {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.header {
+  padding: 24px;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  p {
+    font-size: 14px;
+    color: rgba(black, 0.54);
+  }
+}
+
+.assignment-search {
+  display: flex;
+  > * {
+    margin-right: 15px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.search-results {
+  .mat-table {
+    box-shadow: none;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+  }
+  table {
+    width: 100%;
+  }
+}
+
+.login {
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  max-width: 320px;
+  display: block;
+  margin: auto;
+  padding: 1em 3em 3em;
+  margin-top: 1em;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 20px;
+  button {
+    width: 100%;
+  }
+  h3 {
+    font-weight: bold;
+    text-align: center;
+    margin: 0 0 24px;
+  }
+}
+
+.mat-fab {
+  position: fixed !important;
+  bottom: 40px;
+  right: 240px;
+  z-index: 99;
+}

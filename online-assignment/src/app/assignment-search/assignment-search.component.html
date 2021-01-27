@@ -1,1 +1,50 @@
-<p>assignment-search works!</p>
+<div class="main">
+  <div class="header">
+    <h2 class="mat-h2">Search Assignments</h2>
+    <div class="assignment-search">
+      <mat-form-field appearance="fill">
+        <input matInput placeholder="Filter by name">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-select multiple>
+          <mat-option>Grade 9</mat-option>
+          <mat-option>Grade 10</mat-option>
+          <mat-option>Grade 11</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-select multiple>
+          <mat-option>Science</mat-option>
+          <mat-option>Mathematics</mat-option>
+          <mat-option>English</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="search-results">
+
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <mat-text-column name="position" [headerText]="headerText"></mat-text-column>
+
+      <!-- Change the header text. -->
+      <mat-text-column name="name" headerText="Element"></mat-text-column>
+
+      <!-- Provide a data accessor for getting the cell text values. -->
+      <mat-text-column name="weight" [dataAccessor]="getWeight"></mat-text-column>
+
+      <!-- Justify the content of the cells to the cell end. -->
+      <mat-text-column name="symbol" justify="end"></mat-text-column>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+
+    <button mat-fab color="primary">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+</div>
+

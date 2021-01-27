@@ -1,1 +1,139 @@
-<p>assignment-edit works!</p>
+
+
+<div class="assignment-edit main">
+  <div class="header">
+    <h2 class="mat-h2">Assignment 01</h2>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus perspiciatis iste laudantium.</p>
+  </div>
+  <mat-tab-group mat-align-tabs="start">
+    <mat-tab label="MCQ">
+
+      <!-- Repeatign question block -->
+      <div class="question-block">
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <span class="qn-no">01</span>
+              {{ question }}
+            </mat-panel-title>
+            <span class="move-handle">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </span>
+          </mat-expansion-panel-header>
+
+
+          <div class="question-field">
+            <mat-form-field appearance="fill">
+              <mat-label>Question</mat-label>
+              <input matInput placeholder="Enter question">
+              <mat-hint></mat-hint>
+            </mat-form-field>
+          </div>
+
+          <div class="responses">
+            <mat-radio-group
+              aria-labelledby="example-radio-group-label"
+              class="example-radio-group"
+              [(ngModel)]="favoriteSeason">
+              <mat-radio-button class="example-radio-button" *ngFor="let season of seasons" [value]="season">
+                {{season}}
+              </mat-radio-button>
+            </mat-radio-group>
+          </div>
+
+
+          <div class="help-text-field">
+            <mat-form-field>
+              <mat-label>Help text</mat-label>
+              <textarea matInput
+              ></textarea>
+            </mat-form-field>
+          </div>
+
+
+        </mat-expansion-panel>
+
+
+      </div>
+
+
+    </mat-tab>
+    <mat-tab label="Structured">Content 2</mat-tab>
+    <mat-tab label="Review &amp; Send">
+
+      <div class="review-form">
+        <div class="row full-width">
+          <mat-form-field appearance="fill">
+            <mat-label>Assignment name</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </div>
+        <div class="row half-width">
+          <mat-form-field appearance="fill">
+            <mat-label>Grade</mat-label>
+            <input matInput>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Subject</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </div>
+        <div class="row half-width">
+          <mat-form-field appearance="fill">
+            <mat-label>Status</mat-label>
+            <input matInput>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Due date</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </div>
+        <div class="row half-width">
+          <mat-form-field appearance="fill">
+            <mat-label>Total</mat-label>
+            <input matInput>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Cutoff mark</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </div>
+        <div class="row full-width">
+          <mat-form-field appearance="fill">
+            <mat-label>Summary</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </div>
+        <div class="row half-width">
+          <p>MCQ Count: 40</p>
+          <p>Structured Count: 6</p>
+        </div>
+      </div>
+
+    </mat-tab>
+  </mat-tab-group>
+
+  <div class="floating-actions">
+    <button mat-icon-button>
+      <mat-icon>insert_photo</mat-icon>
+    </button>
+    <span class="sep"></span>
+    <button mat-icon-button>
+      <mat-icon>content_copy</mat-icon>
+    </button>
+    <span class="sep"></span>
+    <button mat-icon-button>
+      <mat-icon>delete</mat-icon>
+    </button>
+    <span class="sep"></span>
+    <button mat-icon-button>
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+
+</div>

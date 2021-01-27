@@ -14,14 +14,14 @@ export class AuthGaurdService implements CanActivate {
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
 
-    this.dataStore.get(DataKey.sessionValidity).next(null);
+   /* this.dataStore.get(DataKey.sessionValidity).next(null);
     this.authenticationServiceHandler.sessionValid();
     this.dataStore.get(DataKey.sessionValidity).subscribe(data => {
       if (data) {
         console.log(data);
         return true;
       }
-    });
+    });*/
 
    /* if (this.authService.isUserLoggedIn())
       return true;
