@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ModuleWrapperComponent } from './module-wrapper.component';
+import { AuthGaurdService } from '../core/service/security/auth-gaurd.service';
 
 const routes: Routes = [
   {
@@ -16,6 +17,7 @@ const routes: Routes = [
   },
   {
     path: 'assignment-search',
+    canActivate: [AuthGaurdService],
     component: ModuleWrapperComponent,
     loadChildren: () =>
       import('../assignment-search/assignment-search.module').then(m => m.AssignmentSearchModule)
