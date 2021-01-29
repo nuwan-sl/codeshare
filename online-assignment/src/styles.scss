@@ -107,16 +107,14 @@ body {
 }
 
 .floating-actions {
-  display: inline-flex;
-  flex-direction: column;
-  border: 1px solid #e5e5e5;
   border-radius: 4px;
   padding: 8px;
   background-color: #fff;
-  position: fixed;
-  top: 72;
-  right: 72px;
-  z-index: 10;
+  position: absolute;
+  top: 223px;
+  z-index: 23;
+  right: -72px;
+
 }
 
 .sep {
@@ -127,6 +125,7 @@ body {
 }
 
 .question-block {
+  padding-top: 12px;
   .mat-expansion-panel {
     box-shadow: none;
     border: 1px solid #e5e5e5;
