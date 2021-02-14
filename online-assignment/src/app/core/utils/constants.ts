@@ -20,4 +20,8 @@ export namespace CONSTANT {
     export const ERROR: number = -1;
     export const WARNING: number = 0;
   }
+
+  export namespace ERROR {
+    export const API_ERROR = 'API_ERROR';
+  }
 }

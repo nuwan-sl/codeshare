@@ -1,22 +1,24 @@
-import { Injectable } from '@angular/core';
-import { HttpErrorResponse, HttpHeaders, HttpParams, HttpResponse } from '@angular/common/http';
-import { DataKey, DataStore } from './data-store.service';
-import { CONSTANT } from '../../utils/constants';
-import { BehaviorSubject } from 'rxjs/index';
-import { RequestAttributes } from '../../model/system/request-attributes';
-import { KeyValue } from '../../model/system/key-value';
-import { HeaderService } from './header.service';
-import { ResponseWrapper } from '../../model/system/response-wrapper';
-import { BaseService } from './base-service';
+import {Injectable} from '@angular/core';
+import {HttpErrorResponse, HttpHeaders, HttpParams, HttpResponse} from '@angular/common/http';
+import {DataKey, DataStore} from './data-store.service';
+import {CONSTANT} from '../../utils/constants';
+import {BehaviorSubject} from 'rxjs/index';
+import {RequestAttributes} from '../../model/system/request-attributes';
+import {KeyValue} from '../../model/system/key-value';
+import {HeaderService} from './header.service';
+import {ResponseWrapper} from '../../model/system/response-wrapper';
+import {BaseService} from './base-service';
 import SUCCESS = CONSTANT.HTTP_STATUS.SUCCESS;
-import { ResponseError } from '../../model/system/response-error';
+import {ResponseError} from '../../model/system/response-error';
+import {ApiError} from "../../model/system/api-error";
 
 @Injectable()
 export class DataLoader {
 
   errorMessage = null;
 
-  constructor(private dataStore: DataStore, private headerService: HeaderService, private baseService: BaseService) {}
+  constructor(private dataStore: DataStore, private headerService: HeaderService, private baseService: BaseService) {
+  }
 
   public loadData<T>(dataKey: DataKey, endpointId: string, params?: HttpParams, pathVariables?: any[]) {
 
@@ -53,7 +55,8 @@ export class DataLoader {
       },
       error: error => {
         this.errorMessage = error.message;
-        console.error('There was an error!', error);
+        const apiError: ApiError = new ApiError(this.errorMessage);
+        this.dataStore.set(dataKey, apiError);
       }
     });
 
@@ -96,16 +99,15 @@ export class DataLoader {
         if (this.isValidResponse(response)) {
           this.dataStore.set(dataKey, this.getData(response));
         } else {
-          this.dataStore.set(dataKey, new ResponseError());
+          this.dataStore.set(dataKey, new ResponseError(""));
         }
       },
       error: error => {
         this.errorMessage = error.message;
-        this.dataStore.set(dataKey, new ResponseError());
+        this.dataStore.set(dataKey, new ResponseError(this.errorMessage));
         console.error('There was an error!', error);
       }
     });
-    ;
   }
 
   private getUrl(url: string, pathVariables: any[]): string {
@@ -152,13 +154,14 @@ export class DataLoader {
     const contentType: KeyValue = new KeyValue();
     contentType.key = 'Content-Type';
     contentType.value = 'application/json';
+    header.push(contentType);
 
     const auth: KeyValue = new KeyValue();
     auth.key = 'Authorization';
     auth.value = sessionStorage.getItem('token');
-
-    header.push(contentType);
-    header.push(auth);
+    if (auth.value) {
+      header.push(auth);
+    }
     this.headerService.setHeaders(header);
   }
 

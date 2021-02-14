@@ -17,7 +17,7 @@ export class AuthenticationServiceHandler {
   }
 
   public sessionValid() {
-    const endpointId = "api-proxy/api/test/valid";
+    const endpointId = "api-proxy/api/secured/valid";
     this.dataLoader.loadData(DataKey.sessionValidity, endpointId);
   }
 
