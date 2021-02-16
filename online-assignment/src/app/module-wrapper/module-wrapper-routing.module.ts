@@ -25,6 +25,7 @@ const routes: Routes = [
   {
     path: 'assignment-edit',
     component: ModuleWrapperComponent,
+    canActivate: [AuthGaurdService],
     loadChildren: () =>
       import('../assignment-edit/assignment-edit.module').then(m => m.AssignmentEditModule)
   }
