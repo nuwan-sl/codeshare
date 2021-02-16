@@ -40,9 +40,18 @@ Inner body container
 }
 
 .main {
-  max-width: 720px;
+  max-width: 1024px;
   margin: auto;
   margin-top: 24px;
+  &.main-search {
+    max-width: 1024px;
+    .header {
+      padding-bottom: 4px;
+    }  
+    button {
+       margin-top: 8px;  
+    }
+  }
 }
 
 body {
@@ -160,11 +169,15 @@ body {
 
 .assignment-search {
   display: flex;
+  align-items: flex-start;
   > * {
     margin-right: 15px;
     &:last-child {
       margin-right: 0;
     }
+  }
+  .name-filter {
+    flex: 1;
   }
 }
 
@@ -177,6 +190,8 @@ body {
   table {
     width: 100%;
   }
+  max-height: calc(100vh - 300px);
+  overflow-y: auto;
 }
 
 .login {
@@ -205,6 +220,23 @@ body {
 .mat-fab {
   position: fixed !important;
   bottom: 40px;
-  right: 240px;
+  right: 80px;
   z-index: 99;
 }
+
+
+// Shared overrides
+.full-width {
+  width: 100%;
+}
+
+
+
+
+// Global overrides
+
+.mat-header-cell {
+  font-size: 16px;
+}
+
+
