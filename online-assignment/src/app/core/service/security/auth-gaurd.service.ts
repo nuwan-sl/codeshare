@@ -18,7 +18,7 @@ export class AuthGaurdService implements CanActivate {
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
 
-    this.dataStore.get(DataKey.sessionValidity).next(null);
+   /* this.dataStore.get(DataKey.sessionValidity).next(null);
     this.authenticationServiceHandler.sessionValid();
     this.dataStore.get(DataKey.sessionValidity).subscribe(data => {
       if (this.common.dataValidity(data)) {
@@ -28,7 +28,7 @@ export class AuthGaurdService implements CanActivate {
         this.router.navigate(['login']);
         return false;
       }
-    });
+    });*/
 
     return true;
 
