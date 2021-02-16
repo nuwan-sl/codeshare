@@ -1,8 +1,14 @@
-<div class="main">
+<div class="main main-search">
   <div class="header">
-    <h2 class="mat-h2">Search Assignments</h2>
-    <div class="assignment-search">
-      <mat-form-field appearance="fill">
+    <h2 class="mat-h2">Filter Assignments</h2>
+
+    <mat-form-field class="full-width">
+      <mat-label>Filter</mat-label>
+      <input matInput  placeholder="Ex. Grade, Subject" >
+    </mat-form-field>
+
+    <!-- <div class="assignment-search">
+      <mat-form-field class="name-filter" appearance="fill">
         <input matInput placeholder="Filter by name">
       </mat-form-field>
       <mat-form-field appearance="fill">
@@ -19,7 +25,8 @@
           <mat-option>English</mat-option>
         </mat-select>
       </mat-form-field>
-    </div>
+      <button mat-flat-button color="primary" >Search</button>
+    </div> -->
   </div>
 
   <div class="search-results">
@@ -37,14 +44,13 @@
       <!-- Justify the content of the cells to the cell end. -->
       <mat-text-column name="symbol" justify="end"></mat-text-column>
 
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns, sticky: true"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>
-
-
-    <button mat-fab color="primary">
-      <mat-icon>add</mat-icon>
-    </button>
+    </table>   
   </div>
+  <mat-paginator [length]="10" [pageSize]="30"></mat-paginator>
+  <button mat-fab color="primary">
+    <mat-icon>add</mat-icon>
+  </button>
 </div>
 
