@@ -18,17 +18,17 @@ export class AuthGaurdService implements CanActivate {
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
 
-    this.dataStore.get(DataKey.sessionValidity).next(null);
-    this.authenticationServiceHandler.sessionValid();
-    this.dataStore.get(DataKey.sessionValidity).subscribe(data => {
-      if (this.common.dataValidity(data)) {
-        return true;
-      }
-      else if (data instanceof ApiError) {
-        this.router.navigate(['login']);
-        return false;
-      }
-    });
+    // this.dataStore.get(DataKey.sessionValidity).next(null);
+    // this.authenticationServiceHandler.sessionValid();
+    // this.dataStore.get(DataKey.sessionValidity).subscribe(data => {
+    //   if (this.common.dataValidity(data)) {
+    //     return true;
+    //   }
+    //   else if (data instanceof ApiError) {
+    //     this.router.navigate(['login']);
+    //     return false;
+    //   }
+    // });
 
     return true;
 

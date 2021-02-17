@@ -13,8 +13,8 @@ import { DataLoader } from './core/service/system/data-loader';
 import { DataStore } from './core/service/system/data-store.service';
 import { HeaderService } from './core/service/system/header.service';
 import { AuthenticationServiceHandler } from './core/service/service-handlers/authentication-service-handler';
-import {Common} from "./core/utils/common";
-import {LoginModule} from "./login/login.module";
+import {Common} from './core/utils/common';
+import {LoginModule} from './login/login.module';
 
 @NgModule({
   declarations: [
