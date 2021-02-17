@@ -9,11 +9,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import {MatSelectModule} from '@angular/material/select';
 import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator'; 
 
 @NgModule({
   declarations: [AssignmentSearchComponent],
   imports: [
-
+    MatPaginatorModule,
     CommonModule,
     AssignmentSearchRoutingModule,
     FormsModule,
