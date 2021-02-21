@@ -135,11 +135,13 @@ body {
 
 .question-block {
   padding-top: 12px;
+}
+
+.question-block, .header {
   .mat-expansion-panel {
     box-shadow: none;
     border: 1px solid #e5e5e5;
   }
-
 }
 
 .mat-tab-body-wrapper {
@@ -155,12 +157,13 @@ body {
   }
 }
 
-.header {
-  padding: 24px;
-  background-color: #fff;
-  border: 1px solid #e5e5e5;
+.header { 
+  background-color: #fff; 
   border-radius: 4px;
   margin-bottom: 16px;
+  position: sticky;
+  top: 0;
+  z-index: 99;
   p {
     font-size: 14px;
     color: rgba(black, 0.54);
@@ -224,13 +227,10 @@ body {
   z-index: 99;
 }
 
-
 // Shared overrides
 .full-width {
   width: 100%;
 }
-
-
 
 
 // Global overrides
@@ -239,4 +239,9 @@ body {
   font-size: 16px;
 }
 
-
+app-assignment-edit {
+  // scroll
+  display: block;
+  overflow-y: auto;
+  height: calc(100vh - 88px);
+}
