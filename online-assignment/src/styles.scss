@@ -245,3 +245,29 @@ app-assignment-edit {
   overflow-y: auto;
   height: calc(100vh - 88px);
 }
+
+.header-blocks {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 24px;
+}
+
+.header-block {
+  &.orange {
+    background-color: rgba(orange, 0.12);
+    border: 1px solid rgba(orange, 0.24);
+  }
+  &.teal {
+    background-color: rgba(teal, 0.12);
+    border: 1px solid rgba(teal, 0.24);
+  }
+  &.purple {
+    background-color: rgba(purple, 0.12);
+    border: 1px solid rgba(purple, 0.24);
+  }
+  padding: 2em;
+  > * {
+    margin: 0 !important;
+  }
+  border-radius: 1em;
+}
